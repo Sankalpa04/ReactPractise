@@ -1,0 +1,82 @@
+.sankalpa{
+    margin: 0%; 
+    padding: 0%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.addtask{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: block; */
+    background-color: rgb(226, 106, 106);
+    width: 100%;
+    height: 100px;
+    padding: 0%;
+    margin: 0%;
+}
+
+.type{
+    height: 40px;
+    width: 250px;
+    padding: 0px 12px 0px 12px;
+    border: 2px solid black;
+    border-radius: 7px;
+    background-color:rgb(226, 106, 106);
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+.talako{
+    margin: 0;
+    padding: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* width: 50%; */
+}
+
+.listed{
+    height: 50px;
+    width: 500px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white; 
+    font: 20px;
+    font-family: sans-serif;
+    padding-top: 15px;
+}
+
+.addbtn{
+    margin-left: 10px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 7px;
+}
+
+
+.btn1{
+    margin-right: 10px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 7px;
+}
+
+.btn{
+    height: 40px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 7px;
+
+}
