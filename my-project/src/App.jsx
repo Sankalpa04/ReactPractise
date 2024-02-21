@@ -1,37 +1,68 @@
-// React routerDOM
-//This is done by UseContext hook
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-// import { Link } from 'react-router-dom'
-import Home from './ExampleWebsite/Home'
-import Profile from './ExampleWebsite/Profile'
-import Contact from './ExampleWebsite/Contact'
-import { useState, createContext } from 'react'
+//Using redux toolkit
+import React from 'react'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Homepage from "./reduxtoolkit/Homepage";
+import Contactt from './reduxtoolkit/Contactt';
+import Login from './reduxtoolkit/Login';
+import { Provider } from 'react-redux';
+import { store } from './reduxtoolkit/Store';
 
-export const AppContext = createContext();
 
 const App = () => {
-  const [username, setUsername] = useState("Sankalpa")
   return (
     <div>
-      <AppContext.Provider value={{username, setUsername}}>
-        <Router>
-          <div>
-            <Link to="/"> Home</Link>
-            <Link to="/profile"> Profile</Link>
-            <Link to="/contact"> Contact</Link>
-          </div>
+      <Provider store={store}>
+        <BrowserRouter>
+            <Link to="/">Home</Link>
+            <Link to="/contact">contact</Link>
+            <Link to="/login">Login</Link>
           <Routes>
-            <Route path="/" element = {<Home/>}/>
-            <Route path="/profile" element={<Profile/>}/>
-            <Route path="/contact" element={<Contact/>}/>
+            <Route path='/' element={ <Homepage/>}/>
+            <Route path='/contact' element={ <Contactt/>}/>
+            <Route path='/login' element={ <Login/>}/>
           </Routes>
-        </Router>
-      </AppContext.Provider>
+        </BrowserRouter>
+      </Provider>
     </div>
   )
 }
 
 export default App
+
+// // React routerDOM
+// //This is done by UseContext hook
+// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+// // import { Link } from 'react-router-dom'
+// import Home from './ExampleWebsite/Home'
+// import Profile from './ExampleWebsite/Profile'
+// import Contact from './ExampleWebsite/Contact'
+// import { useState, createContext } from 'react'
+
+// export const AppContext = createContext();
+
+// const App = () => {
+//   const [username, setUsername] = useState("Sankalpa")
+//   return (
+//     <div>
+//       <AppContext.Provider value={{username, setUsername}}>
+//         <Router>
+//           <div>
+//             <Link to="/"> Home</Link>
+//             <Link to="/profile"> Profile</Link>
+//             <Link to="/contact"> Contact</Link>
+//           </div>
+//           <Routes>
+//             <Route path="/" element = {<Home/>}/>
+//             <Route path="/profile" element={<Profile/>}/>
+//             <Route path="/contact" element={<Contact/>}/>
+//           </Routes>
+//         </Router>
+//       </AppContext.Provider>
+//     </div>
+//   )
+// }
+
+// export default App
 
 // import React from 'react'
 // import Form from './Pedrotech/form'
