@@ -1,15 +1,54 @@
-import React from 'react'
-import Form from './Pedrotech/form'
+// React routerDOM
+//This is done by UseContext hook
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import Home from './ExampleWebsite/Home'
+import Profile from './ExampleWebsite/Profile'
+import Contact from './ExampleWebsite/Contact'
+import { useState, createContext } from 'react'
+
+export const AppContext = createContext();
 
 const App = () => {
+  const [username, setUsername] = useState("Sankalpa")
   return (
     <div>
-      <Form/>
+      <AppContext.Provider value={{username, setUsername}}>
+        <Router>
+          <div>
+            <Link to="/"> Home</Link>
+            <Link to="/profile"> Profile</Link>
+            <Link to="/contact"> Contact</Link>
+          </div>
+          <Routes>
+            <Route path="/" element = {<Home/>}/>
+            <Route path="/profile" element={<Profile/>}/>
+            <Route path="/contact" element={<Contact/>}/>
+          </Routes>
+        </Router>
+      </AppContext.Provider>
     </div>
   )
-}              
+}
 
 export default App
+
+// import React from 'react'
+// import Form from './Pedrotech/form'
+// import ChangeProfile from './ExampleWebsite/ChangeProfile'
+
+
+
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <Form/> */}
+//       <ChangeProfile/>
+//     </div>
+//   )
+// }              
+
+// export default App
 
 
 

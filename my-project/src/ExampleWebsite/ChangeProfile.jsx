@@ -4,7 +4,7 @@ import { useContext } from 'react'
 
 
 const ChangeProfile = () => {
-    const { setUsername} = useContext(AppContext)
+    const { setUsername } = useContext(AppContext)
     const [newUsername, setNewUsername] = useState("");
 
     return (
